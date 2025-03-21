@@ -20,7 +20,7 @@ El desarrollo se centró en la verificación de la estructura del código, la co
 
 NOTE: Be sure to include the branch 
 
-URL: 
+URL: https://github.com/iriaagullo/python-components/tree/labmodule01
 
 ### Unit Tests Executed
 
@@ -32,7 +32,6 @@ since you need to ensure you haven't introduced regressions.
 
 - DataUtilTest
 
-- OtherTestCases...
 
 ### Integration Tests Executed
 

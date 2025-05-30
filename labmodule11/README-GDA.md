@@ -10,13 +10,17 @@ NOTE: Include two full paragraphs describing your implementation approach by ans
 
 What does your implementation do? 
 
+Esta implementación en el GDA se enfoca en agregar soporte para la persistencia de datos provenientes del CDA. Para ello, se integró una instancia de IPersistenceClient en la clase DeviceDataManager, que se activa si el parámetro de configuración correspondiente está habilitado. Cuando se recibe un mensaje de sensor (SensorData), el GDA almacena esta información usando el método storeData, asegurando que los datos sean guardados de forma local para su posterior análisis o consulta.
+
 How does your implementation work?
+
+El enfoque seguido consiste en detectar la llegada de nuevos datos desde el CDA, y antes de cualquier otro procesamiento, validar que el cliente de persistencia esté habilitado y disponible. Si lo está, los datos se guardan utilizando una calidad de servicio (QoS) estándar. Esta mejora permite al GDA actuar como un nodo intermedio robusto, que no solo enruta información, sino que también la conserva localmente, incrementando la confiabilidad del sistema en entornos con conectividad intermitente o para auditorías locales.
 
 ### Code Repository and Branch
 
 NOTE: Be sure to include the branch.
 
-URL: 
+URL:  https://github.com/iriaagullo/java-components/tree/labmodule11
 
 
 ### Unit Tests Executed
@@ -36,8 +40,8 @@ some exceptions (such as your cloud connectivity tests). In such cases, they'll 
 your code to ensure it's correct. As for the tests you execute, you only need to list each
 test case below (e.g. SensorSimAdapterManagerTest, DeviceDataManagerTest, etc.)
 
-- 
-- 
+- MqttClientConnectorTest
+- CloudClientConnectorTest
 - 
 
 EOF.
